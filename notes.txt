@@ -3,6 +3,31 @@ ArrayList<Integer> al = new ArrayList<Integer>();
 System.out.println("Elements of the ArrayList " + "before sorting : " + al);
 Elements of the ArrayList before sorting : [205, 102, 98, 275, 203]
 
+Sorting an ArrayList according to user defined criteria. We can use Comparator Interface for this purpose.
+
+====================================================================
+
+class SortByRoll implements Comparator<Student> {
+
+	@override
+	public int compare(Student a, Student b) {
+		return a.rollno - b.rollno;
+	}
+
+Collections.sort(ar, new Sortbyroll());
+
+for (int i=0; i<ar.size(); i++) 
+    	System.out.println(ar.get(i)); 
+
+====================================================================
+
+using lambda expression in place of comparator object
+Collections.sort(al, (o1, o2) -> (o1 > o2) ? -1 : (o1 < o2) ? 1 : 0);
+
+System.out.println("Elements of the ArrayList after" + " sorting : " + al);
+
+====================================================================
+
 https://www.geeksforgeeks.org/collections-sort-java-examples/
 
 
@@ -14,4 +39,18 @@ Time Complexity: O(N log N) as time complexity of Collections.sort() is O(nlog(n
 Collections.sort(al, Collections.reverseOrder()); - descending order.
 Time Complexity: O(N log N) as time complexity of Collections.sort() is O(nlog(n)).
 
-Sorting an ArrayList according to user defined criteria. We can use Comparator Interface for this purpose.
+
+
+Using Collections.sort() to sort an array 
+
+convert array to array list and use sort method.
+
+List al = new ArrayList(Arrays.asList(arr)); 
+Collections.sort(al);
+
+====================================================================
+
+Arrays.sort() vs Collections.sort() time complexity :
+
+Arrays.sort() uses a Dual-Pivot Quicksort algorithm which gives a time complexity of O(N.log N) which is typically faster than traditional Quicksort algorithms. On the other hand, Collections.sort() creates an array of list elements, sorts them using an adaptive Mergesort algorithm, and iterates over the list to position each element at its correct location. Thus for primitive datatypes like int, char, double, etc. Arrays.sort() proves to be way more time efficient than Collections.sort(). Problems involving primitive datatypes should be tried to solve using Arrays.sort() for better optimisation.
+		
