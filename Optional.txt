@@ -1,0 +1,13 @@
+import java.util.*;
+Optional<String> checkNull = Optional.ofNullable(words[5]);
+
+if (checkNull.isPresent()) {
+            String word = words[5].toLowerCase();
+            System.out.print(word);
+        }
+        else
+            System.out.println("word is null");
+}
+
+Optional is a container object which may or may not contain a non-null value. You must import java.util package to use this class. If a value is present, isPresent() will return true and get() will return the value. 
+
