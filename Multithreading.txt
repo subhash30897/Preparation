@@ -1,0 +1,29 @@
+https://www.geeksforgeeks.org/java-multithreading-tutorial/?ref=shm
+
+Multitasking is being achieved in two ways:
+Multiprocessing: Process-based multitasking is a heavyweight process and occupies different address spaces in memory. Hence, while switching from one process to another, it will require some time be it very small, causing a lag because of switching. This happens as registers will be loaded in memory maps and the list will be updated.
+Multithreading: Thread-based multitasking is a lightweight process and occupies the same address space. Hence, while switching cost of communication will be very less.
+
+
+Thread Life cycle:
+New: When a thread is just created.
+Runnable: When a start() method is called over thread processed by the thread scheduler.
+Case A: Can be a running thread
+Case B: Can not be a running thread
+Running: When it hits case A means the scheduler has selected it to be run the thread from runnable state to run state.
+Blocked: When it hits case B meaning the scheduler has selected not to allow a thread to change state from runnable to run.
+Terminated: When the run() method exists or stop() method is called over a thread.
+
+process scheduling algorithms in operating systems
+First In First Out
+Last In First Out
+Round Robin Scheduling
+
+Implementing multithreading:
+Using Thread class:
+
+start()	It starts the execution of the thread
+run()	It does the executable operations statements in the body of this method over a thread
+sleep()	It is a static method that puts the thread to sleep for a certain time been passed as an argument to it
+
+Using Runnable Inf:
